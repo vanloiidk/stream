@@ -12,7 +12,10 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "lodash": "^4.17.11"
+    "immutable": "^4.0.0-rc.12",
+    "lodash": "^4.17.11",
+    "mongodb": "^3.1.13",
+    "uws": "^9.148.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
