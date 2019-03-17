@@ -67,10 +67,10 @@ exports.routers = (app) => {
      */
     app.post('/api/camera/:id/stream', (req, res, next) =>{
 
-        const body =req.body;
+        const body = req.body;
         console.log("Got body command", body);
 
-        const payload = _.get(body, 'stream', false);
+        const payload = _.get(body,'stream',false);
         //after receiving action from user owner of camera we need to send to RaspberryPi with stream or not stream.
 
         const connections = app.connections.getClients();
@@ -80,7 +80,7 @@ exports.routers = (app) => {
             const ws = con.ws;
             if(ws){
                 const message ={
-                    action: "stream",
+                    action: 'stream',
                     payload: payload
                 }
                 ws.send(JSON.stringify(message));

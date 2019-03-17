@@ -1,5 +1,58 @@
 from twisted.internet.protocol import ReconnectingClientFactory
 from autobahn.twisted.websocket import WebSocketClientProtocol, WebSocketClientFactory
+import json
+import subprocess
+
+streaming_process = None
+
+class App:
+    def __init__(self):
+
+        print("App is initial.")
+
+    def stop_camera(self):
+        global streaming_process
+
+        if streaming_process is not None:
+
+            print("Begin stopping camera")
+            streaming_process.kill()
+            streaming_process = None
+        else:
+            print ("No streaming process so we dont need to do stop")
+
+    def show_camera(self, is_bool):
+        global streaming_process
+        print("we need to show camera {0}".format(is_bool))
+
+        if is_bool:
+
+                print(streaming_process)
+                if streaming_process is None:
+
+                    ffmpeg_command = 'ffmpeg -re -i /home/vanloi/tutorials/stream/input.mp4 -c:v libx264 -preset veryfast -maxrate 3000k -bufsize 6000k -pix_fmt yuv420p -g 50 -c:a aac -b:a 160k -ac 2 -ar 44100 -f flv rtmp://localhost/live/tabvn'
+                    streaming_process = subprocess.Popen(ffmpeg_command, shell=True, stdin=subprocess.PIPE)
+                    # start_streaming.communicate()
+                else:
+                    print("Streaming is in process we are not accept more streaming.")
+        else:
+            self.stop_camera()
+
+    def decode_message(self, payload):
+
+        print("Got message need to decode {0}".format(payload))
+        json_message = json.loads(payload)
+        action = json_message.get('action')
+        inp = json_message.get('payload')
+        inp = str(inp)
+        if inp == 'false' or inp == 'False':
+            payload_value = 0
+        else:
+            payload_value = 1
+
+        if action == 'stream':
+            self.show_camera(payload_value)
+
 
 
 class AppProtocol(WebSocketClientProtocol):
@@ -15,8 +68,9 @@ class AppProtocol(WebSocketClientProtocol):
 
         def hello_server():
 
-            #{"id":"tabvn","secret","key"}
-            self.sendMessage(u"Pi here do youo have any job for me to do? ".encode('utf8'))
+            message = {"action": "pi_online", "payload": {"id": "tabvn", "secret": "key"}}
+            self.sendMessage(json.dumps(message))
+            # self.sendMessage(u"Pi here do youo have any job for me to do? ".encode('utf8'))
             # self.factory.reactor.callLater(1, hello_server)
         hello_server()
 
@@ -25,6 +79,9 @@ class AppProtocol(WebSocketClientProtocol):
             print("Got Binary message {0} bytes".format(len(payload)))
         else:
             print("Got Text message from the server {0}".format(payload.decode('utf8')))
+            # need to do decode this message and know what is server command
+            app = App()
+            app.decode_message(payload)
 
     def onClose(self, wasClean, code, reason):
         print("Connect closed {0}".format(reason))

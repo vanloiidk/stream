@@ -39,6 +39,12 @@ class Connection{
 
             });
 
+            ws.on('close', ()=>{
+               console.log(`RaspberryPi camera with Id ${clientId} is disconnected`);
+               this.removeClient(clientId);
+
+            });
+
             const commandNeedToSendToPi = {action: 'stream',payload:true};
             // ws.send(JSON.stringify(commandNeedToSendToPi));
 

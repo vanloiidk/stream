@@ -37,7 +37,7 @@ export default class Player extends Component{
     componentDidMount() {
 
         console.log(this.props);
-        const liveChannel = 'NCKH';
+        const liveChannel = 'tabvn';
 
         if(Hls.isSupported()&&this.player) {
             const video = this.player;
