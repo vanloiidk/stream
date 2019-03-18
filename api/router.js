@@ -99,4 +99,21 @@ exports.routers = (app) => {
     });
 
 
+    /**
+     * @method POST
+     * @endpoint /api/users
+     * @description create new user
+     *
+     */
+
+    app.post('/api/users', (req, res, next)=>{
+
+
+
+        return res.json({
+            youSent: req.body
+
+        });
+    });
+
 };

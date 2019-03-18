@@ -3,21 +3,35 @@
   <component name="ChangeListManager">
     <list default="true" id="4cd8a7c2-5cf6-4db9-a2ff-fa5202a4219e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/connection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rasSetting/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rasSetting/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rasSetting/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/rasSetting/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/live/NCKH/1552622805695.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/live/NCKH/1552622809239.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/live/NCKH/1552622812576.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/live/NCKH/1552622815952.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/live/NCKH/1552622819245.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/live/NCKH/1552622822576.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/live/NCKH/1552622825966.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/live/NCKH/1552622829250.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/live/NCKH/1552622832595.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/live/NCKH/index.m3u8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819068588.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819072131.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819075459.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819078809.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819082135.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819085475.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819088890.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819092141.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819095527.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819098854.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819102152.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819105492.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819108843.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819112165.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819115505.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819118837.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819122180.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819125532.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819128891.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819132230.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819135517.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819138856.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/1552819142193.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/live/tabvn/index.m3u8" beforeDir="false" afterPath="$PROJECT_DIR$/storage/live/tabvn/index.m3u8" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,49 +47,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="249">
+              <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/models/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="8" selection-start-column="8" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/models/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/connection.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/router.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1518">
-              <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/components/player.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/rasSetting/app.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -87,14 +85,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/api/package.json" />
-        <option value="$PROJECT_DIR$/api/index.js" />
-        <option value="$PROJECT_DIR$/api/router.js" />
         <option value="$PROJECT_DIR$/web/src/components/player.js" />
         <option value="$PROJECT_DIR$/api/connection.js" />
+        <option value="$PROJECT_DIR$/api/router.js" />
+        <option value="$PROJECT_DIR$/api/config.js" />
+        <option value="$PROJECT_DIR$/api/db.js" />
+        <option value="$PROJECT_DIR$/api/models/index.js" />
+        <option value="$PROJECT_DIR$/api/index.js" />
+        <option value="$PROJECT_DIR$/api/models/user.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="25" />
     <option name="width" value="1366" />
     <option name="height" value="694" />
@@ -118,6 +120,11 @@
               <item name="stream" type="b2602c69:ProjectViewProjectNode" />
               <item name="stream" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stream" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stream" type="462c0819:PsiDirectoryNode" />
+              <item name="rasSetting" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stream" type="b2602c69:ProjectViewProjectNode" />
@@ -176,16 +183,17 @@
       <workItem from="1552723751615" duration="8732000" />
       <workItem from="1552806457838" duration="2761000" />
       <workItem from="1552809544424" duration="3583000" />
+      <workItem from="1552898480188" duration="4381000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21634000" />
+    <option name="totallyTimeSpent" value="26015000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1366" height="694" extended-state="6" />
+    <frame x="0" y="25" width="1366" height="694" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -227,30 +235,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/components/player.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
+        <state relative-caret-position="902">
           <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
@@ -264,6 +251,58 @@
           <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="116" column="7" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rasSetting/app.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
