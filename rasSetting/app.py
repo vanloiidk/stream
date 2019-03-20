@@ -2,6 +2,7 @@ from twisted.internet.protocol import ReconnectingClientFactory
 from autobahn.twisted.websocket import WebSocketClientProtocol, WebSocketClientFactory
 import json
 import subprocess
+import os
 
 streaming_process = None
 
@@ -16,7 +17,9 @@ class App:
         if streaming_process is not None:
 
             print("Begin stopping camera")
-            streaming_process.kill()
+            # streaming_process.kill()
+            pid = streaming_process.pid+1
+            os.kill(pid, 9)
             streaming_process = None
         else:
             print ("No streaming process so we dont need to do stop")

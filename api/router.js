@@ -2,7 +2,26 @@ const _ = require('lodash');
 
 exports.routers = (app) => {
 
-
+    /**
+     * Error handle in callback in response
+     * @param res
+     * @param errorMessage
+     * @param code
+     * @returns {*|Promise<any>}
+     */
+    const errorHandle = (res, errorMessage, code = 500)=>{
+        return res.status(code).json({error: {message: errorMessage}});
+    };
+    /**
+     * Success response handler
+     * @param res
+     * @param data
+     * @param code
+     * @returns {*|Promise<any>}
+     */
+    const responseHandle = (res, data, code = 200)=>{
+      return res.status(code).json(data)
+    };
     /**
      * @method GET
      * @endpoint /
@@ -82,7 +101,7 @@ exports.routers = (app) => {
                 const message ={
                     action: 'stream',
                     payload: payload
-                }
+                };
                 ws.send(JSON.stringify(message));
             }
 
@@ -108,12 +127,14 @@ exports.routers = (app) => {
 
     app.post('/api/users', (req, res, next)=>{
 
+        const body = req.body;
+        app.models.user.create(body,(err, result)=>{
+            if(err === null && result){
+                _.unset(result,'password');
+            }
+            return err ? errorHandle(res,  err, 503):responseHandle(res, result);
 
-
-        return res.json({
-            youSent: req.body
-
-        });
+        })
     });
 
 };
