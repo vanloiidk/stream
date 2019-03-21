@@ -1,13 +1,40 @@
 const _ = require('lodash');
 const bcrypt = require('bcrypt');
 const {OrderedMap} = require('immutable');
+const {ObjectID} = require('mongodb');
 const salt = 10;
+
 class User{
     constructor(app){
 
         this.app = app;
         // user in cache
         this.users = new OrderedMap();
+    }
+
+    load(id, cb =()=>{}){
+
+
+        //first load user in cache
+        const userInCache = this.users.get(id);
+        if(userInCache){
+            return cb(null, userInCache);
+        }
+        //not found in cache let find in bd
+        const userObjectId = new ObjectID(id);
+        this.app.db.collection('user').find({_id: userObjectId}).limit(1).toArray((err, results )=>{
+
+            if(err||!_.get(results,'[0]')){
+                return cb("user is not found",null);
+            }
+
+            return cb(null, _.get(results,'[0]'));
+        })
+    }
+
+    validateEmail(email = ""){
+        const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return emailRegex.test(email);
     }
 
     addUserToCache(id, user){
@@ -84,7 +111,13 @@ class User{
         //return cb(err, user);
     }
 
-    create(user = {}, cb = () => {}){
+    /**
+     * Create new user account with object
+     * @param user
+     * @param call back with err, result
+     */
+    create(user = {}, cb = () => {
+    }){
 
         const collection = this.app.db.collection('user');
         let obj = {
@@ -120,7 +153,57 @@ class User{
         });
     }
 
+    login(email,password="",cb = ()=>{
+    }){
 
+        if(!this.validateEmail(email)){
+            return cb("Email is not valid", null);
+        }
+        //if email is valod let find this email in database if exist.
+
+        const query ={
+            email: `${email}`
+        };
+        const options = {
+            _id: true,
+            password: true,
+            name: true,
+            created: true,
+            email: true,
+        };
+        const collection = this.app.db.collection('user');
+
+
+        collection.find(query, options).limit(1).toArray((err, results)=>{
+
+            if(err || !_.get(results,'[0]')){
+
+                return cb("User not found",null);
+
+            }
+
+            //User is found. let verify the password
+            const user = _.get(results, '[0]');
+            const encodedPassword = _.get(user, 'password');
+            const passwordIsMatch = bcrypt.compareSync(password,encodedPassword);
+            _.unset(user, 'password');
+            if(passwordIsMatch){
+                //let create token object
+                this.app.models.token.create(user._id, (err, token)=>{
+                    if(err){
+                        return cb(err, null);
+                    }
+                    token.user = user;
+
+                    return cb(null, token);
+
+                });
+            }else {
+                return cb("password is incorrect", null);
+            }
+        });
+
+    }
 }
 
 module.exports = User;

@@ -8,13 +8,15 @@ const {routers} = require('./router');
 const {connect} = require('./db');
 const {dbname} = require('./config');
 const Model = require('./models/index');
+const cors = require('cors');
+
 
 
 const PORT = 3001;
 const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-
+app.use(cors({exposedHeaders: '*'}));
 
 
 

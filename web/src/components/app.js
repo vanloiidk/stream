@@ -5,6 +5,9 @@ import userAvatar from '../images/avatar.png';
 import Watch from './pages/watch';
 import Home from './pages/home';
 import {Route,Switch} from 'react-router-dom';
+import Register from "./pages/user/register";
+import Store from "../store";
+import Login from "./pages/user/login";
 
 const AppWrapper = styled.div`
 
@@ -64,10 +67,17 @@ const HeaderUserAvatar = styled.img`
 `;
 
 export default class App extends Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            store: new Store(this)
+        }
+    }
+
     render(){
 
-
-
+        const {store} = this.state;
         return <AppWrapper>
 
             <Header>
@@ -83,8 +93,10 @@ export default class App extends Component{
             <Main>
                 <Container>
                     <Switch>
-                        <Route exact path={'/watch/:id'} component={Watch}/>
-                        <Route exact path={'/'} component={Home}/>
+                        <Route exact path={'/login'} render={(routeProps)=> <Login {...routeProps} store={store}/>} />
+                        <Route exact path={'/register'} render={(routeProps)=> <Register {...routeProps} store={store}/>}/>
+                        <Route exact path={'/watch/:id'} render={(routeProps)=> <Watch {...routeProps} store={store}/>}/>
+                        <Route exact path={'/'} render={(routeProps)=> <Home {...routeProps} store={store}/>}/>
                     </Switch>
                 </Container>
 

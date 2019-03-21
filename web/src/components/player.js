@@ -41,10 +41,10 @@ export default class Player extends Component{
 
         if(Hls.isSupported()&&this.player) {
             const video = this.player;
-            video.addEventListener('contextmenu',(e)=>{
-                e.preventDefault();
-                return false;
-            })
+            // video.addEventListener('contextmenu',(e)=>{
+            //     e.preventDefault();
+            //     return false;
+            // });
 
             const videoUrl = `http://localhost:3002/live/${liveChannel}/index.m3u8`;
             const hls = new Hls();
@@ -73,7 +73,7 @@ export default class Player extends Component{
             width: 640,
             height:360,
             background: '#000',
-        }
+        };
         return <PlayerWrapper>
             <PlayerInner>
                 <video onClick={this._onTouchInsidePlayer} style={style} ref={(player)=> this.player = player} autoPlay={true}></video>
