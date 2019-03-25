@@ -8,6 +8,7 @@
     "history": "^4.7.2",
     "hls.js": "^0.8.8",
     "immutable": "^4.0.0-rc.12",
+    "moment": "^2.24.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-router-dom": "^4.3.1",
@@ -32,7 +33,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "dotenv": "^7.0.0",
     "gh-pages": "^2.0.1",
     "gh-pages-deploy": "^0.5.1"
   }

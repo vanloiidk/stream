@@ -1,30 +1,39 @@
-import React,{Component} from "react";
-import styled from 'styled-components';
+import React,{Component} from 'react'
+import styled  from 'styled-components'
 import Player from "../player";
+import {history} from "../../history";
 
-
-const LiveWrapper = styled.div`
+const LiveWrapper = styled.div `
     
-`;
+`
 
-const LiveVideo = styled.div`
+const LiveVideo = styled.div `    
     display: flex;
-    justify-content:center;
-    
-
-`;
+    justify-content: center;
+`
 export default class Watch extends Component{
+
+
+    componentWillMount() {
+
+        const {store} = this.props;
+
+        const currentUser = store.getCurrentUser();
+        if(!currentUser){
+            // user is logged in we need redirect him to other page.
+
+            history.push('/login');
+        }
+
+    }
 
     render(){
 
         return <LiveWrapper>
-
             <LiveVideo>
-                <Player/>
-
+                <Player />
             </LiveVideo>
 
         </LiveWrapper>
     }
-
 }

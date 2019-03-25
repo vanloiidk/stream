@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="040208d8-09e5-41d7-9b2b-a24f645a49a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/pages/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/pages/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/pages/watch.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/pages/watch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/player.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="35" column="207" selection-start-line="35" selection-start-column="207" selection-end-line="35" selection-end-column="207" />
+            <state relative-caret-position="44">
+              <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="235" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
               </folding>
@@ -125,7 +132,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="698" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49868074" visible="true" weight="0.24571854" />
       <window_info id="Favorites" order="1" sideWeight="0.5013193" side_tool="true" weight="0.24571854" />
@@ -149,8 +155,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="35" column="207" selection-start-line="35" selection-start-column="207" selection-end-line="35" selection-end-column="207" />
+        <state relative-caret-position="44">
+          <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="235" />
           <folding>
             <element signature="e#0#63#0" expanded="true" />
           </folding>

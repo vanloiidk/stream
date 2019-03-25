@@ -68,6 +68,10 @@ export default class Store {
 
         return _.get(this.token, 'user');
     }
+    // reSetCurrentUser(){
+    //     _.set(this.token,'user',null);
+    //     return null;
+    // }
 
     addCamera(camera, cb = () => {
     }) {
@@ -120,6 +124,12 @@ export default class Store {
         this.update();
 
     }
+    deleteUserTokenToLocalStorage() {
+        localStorage.clear();
+
+        this.update();
+
+    }
 
     createUserAccount(user, cb = () => {
     }) {
@@ -155,6 +165,11 @@ export default class Store {
 
             return cb(err, null);
         })
+    }
+    logout(user, cb = () =>{
+    }){
+        //const token = _.get(response,'data', null);
+        //this.deleteUserTokenToLocalStorage()
     }
 
     update() {

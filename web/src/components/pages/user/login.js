@@ -41,14 +41,14 @@ export default class Login extends Component {
     }
 
     componentWillMount() {
-
         const {store} = this.props;
 
         const currentUser = store.getCurrentUser();
+        console.log(currentUser);
         if(currentUser){
             // user is logged in we need redirect him to other page.
 
-            history.push('/');
+            //history.push('/');
         }
 
     }
@@ -88,6 +88,7 @@ export default class Login extends Component {
                 this.setState({
                     message: {type: 'success', msg: 'Login successful.'}
                 })
+                history.push('/')
             }
 
         });

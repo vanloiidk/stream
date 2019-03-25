@@ -168,6 +168,32 @@ class Token {
         });
 
     }
+    // delete(userId, cb = ()=>{
+    // }){
+    //     if (typeof userId === 'string') {
+    //
+    //         userId = new ObjectID(userId)
+    //     }
+    //
+    //     this.app.db.collection('token').find({_id: tokenObjectId}).limit(1).toArray((err, results) => {
+    //
+    //         const token = _.get(results, '[0]', null);
+    //         if(err || !token){
+    //
+    //             return cb("Token not found", null);
+    //         }
+    //
+    //
+    //         // we also cache this for later and dont have to query to db any more.
+    //
+    //         this.addTokenToCache(_.toString(id), token);
+    //
+    //         return cb(null, token);
+    //
+    //
+    //
+    //     });
+    // }
 }
 
 module.exports = Token;
