@@ -13,6 +13,7 @@ import UserCamera from "./pages/camera/user-camera";
 import AddCamera from "./pages/camera/add-camera";
 import {history} from "../history";
 
+
 const AppWrapper = styled.div `
    
 `;
@@ -68,10 +69,19 @@ const UserTitle = styled.div `
     font-weight: 600;
     line-height: ${headerHeight}px;
     padding-right: 10px;
+    color: lightblue;
 `
-var btName = '';
-const login = 'login';
-const logout = 'logout';
+const LoginBt = styled.button`
+    border: 0px;
+    padding: 2px 15px;
+    background: #FFF;
+    font-weight: 600;
+        
+
+`
+
+
+
 
 export default class App extends React.Component {
 
@@ -83,9 +93,7 @@ export default class App extends React.Component {
             store: new Store(this)
         }
     }
-    updatebutton(title){
-        return title;
-    }
+
 
 
 
@@ -102,7 +110,7 @@ export default class App extends React.Component {
 
                     <UserTitle>{_.get(currentUser,'name','')}</UserTitle>
 
-                    <button onClick={function () {
+                    <LoginBt onClick={function () {
                         //console.log(btName);
                         // if (btName === 'logout'){
                         //     btName = 'login';
@@ -116,8 +124,8 @@ export default class App extends React.Component {
 
                         //document.getElementsByTagName('name1')[0].innerHTML = this.setUserTitle(currentUser);
                         //history.push('/login');
-                    }}>{currentUser ? btName = `logout` : btName =`login`}</button>
-                    {console.log(btName)}
+                    }}>{currentUser ? `logout` : `login`}</LoginBt>
+
                     <HeaderUserMenu>
 
                         <HeaderUserAvatar alt="" src={userAvatar}/>
@@ -141,7 +149,7 @@ export default class App extends React.Component {
             </Main>
             <Footer>
                 <Container>
-                    <Copyright>® 2017 Camera Inc.</Copyright>
+                    <Copyright>® 2019 Camera Inc.</Copyright>
                 </Container>
             </Footer>
         </AppWrapper>

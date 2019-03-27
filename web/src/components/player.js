@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import styled from 'styled-components'
 import Hls from 'hls.js'
+import {source} from '../config'
 
 const PlayerWrapper = styled.div`
     position:relative; 
@@ -33,12 +34,13 @@ export default class Player extends Component{
         this._onTouchInsidePlayer = this._onTouchInsidePlayer.bind(this)
 
     }
+
     componentDidMount(){
 
-        const liveChannel = 'tabvn';
+        const liveChannel = this.props.channel;
 
         if(Hls.isSupported() && this.player) {
-            const streamURL = `http://localhost:3002/live/${liveChannel}/index.m3u8`;
+            const streamURL = `${source}/live/${liveChannel}/index.m3u8`;
             const video = this.player;
 
 

@@ -1,7 +1,9 @@
 const {OrderedMap} = require('immutable');
 const {ObjectID} = require('mongodb');
+const {_} =require('lodash');
 
 class Connection{
+
     constructor(app){
         this.app = app;
         this.clients = new OrderedMap();
@@ -14,9 +16,14 @@ class Connection{
         this.clients = this.clients.set(id,client);
 
     }
+    getClient(index){
+        return this.clients[index];
+    }
     removeClient(id){
         this.clients = this.clients.remove(id);
     }
+
+
     socketServerConnect(){
         const app = this.app;
         app.wss.on('connection', (ws) => {
@@ -25,6 +32,16 @@ class Connection{
 
             //add this Pi to clients collections.
             const clientId = new ObjectID().toString();
+            var key ='';
+            ws.on('message', (msg)=>{
+
+                console.log('Message received from RaspberryPi is ',msg);
+                key=msg;
+
+            });
+
+            //ws.send("ho");
+
             const newClient ={
                 _id:clientId,
                 ws: ws,
@@ -33,11 +50,6 @@ class Connection{
 
             this.addClient(clientId,newClient);
 
-            ws.on('message', (msg)=>{
-                console.log('Message received from RaspberryPi is ',msg);
-
-
-            });
 
             ws.on('close', ()=>{
                console.log(`RaspberryPi camera with Id ${clientId} is disconnected`);
@@ -45,7 +57,7 @@ class Connection{
 
             });
 
-            const commandNeedToSendToPi = {action: 'stream',payload:true};
+            //const commandNeedToSendToPi = {action: 'stream',payload:true};
             // ws.send(JSON.stringify(commandNeedToSendToPi));
 
         });

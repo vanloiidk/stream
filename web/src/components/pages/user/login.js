@@ -74,7 +74,7 @@ export default class Login extends Component {
 
         event.preventDefault();
 
-        console.log("FOrm is submitted with value", user)
+        console.log("Form is submitted with value", user)
 
         store.login(user, (err, result) => {
 

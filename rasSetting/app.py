@@ -72,9 +72,10 @@ class AppProtocol(WebSocketClientProtocol):
 
         def hello_server():
 
-            message = {"action": "pi_online", "payload": {"id": "tabvn", "secret": "key"}}
+            message = "loi"
+            # message = {"action": "pi_online", "payload": {"id": "tabvn ", "secret": "key"}}
             self.sendMessage(json.dumps(message))
-            # self.sendMessage(u"Pi here do youo have any job for me to do? ".encode('utf8'))
+            # self.sendMessage(u"Pi here do you have any job for me to do? ".encode('utf8'))
             # self.factory.reactor.callLater(1, hello_server)
         hello_server()
 

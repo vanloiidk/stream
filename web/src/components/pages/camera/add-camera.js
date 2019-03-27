@@ -59,7 +59,7 @@ export default class AddCamera extends Component {
             if (err) {
 
                 this.setState({
-                    message: {type: 'error', msg: _.get(err, 'response.data.error.message', 'An error')}
+                    message: {type: 'error', msg: _.get(err, 'response.data.error.message', 'An error in this.setstate')}
                 })
             } else {
 

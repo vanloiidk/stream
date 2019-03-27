@@ -15,7 +15,11 @@ class Camera {
     find(q, options, cb = () => {}){
 
 
+
         this.app.db.collection('camera').find(q, options).limit(100).toArray((err, results)=>{
+        //     results.forEach(function (ell) {
+        //
+        //     });
 
             return cb(err ? "Not found": null, results);
 
@@ -33,9 +37,18 @@ class Camera {
 
     create(obj, cb = () => {
     }) {
+        const connections = this.app.connections.getClients();
 
         const name = _.get(obj, 'name', null);
         let userId = _.get(obj, 'userId', null);
+
+        console.log(name);
+        console.log('number connection: ',connections.size);
+        connections.forEach(function (ell) {
+            console.log(ell);
+            console.log('get id', _.get(ell,'_id',''))
+
+        });
 
 
         if (!userId) {
