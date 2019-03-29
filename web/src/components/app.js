@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {borderColor, headerHeight, containerMaxWidth} from "./theme";
-import userAvatar from '../images/avatar.png'
+import userAvatar from '../images/icon.png'
 import Watch from './pages/watch'
 import Home from "./pages/home";
 import {Route, Switch} from 'react-router-dom'
@@ -42,11 +42,16 @@ const Copyright = styled.p`
     text-align: center;
 `
 const HeaderTitle = styled.div `
-    font-size: 35px;
+    //outline: none
+    //width: 110px;
+    background: white;
+    //border: none;
+    font-size: 30px;
     font-weight: 800;
     line-height: ${headerHeight}px;
     flex-grow: 1;
-    text-align: center;
+    text-align: left;
+    margin-left: 50px;
     color: rgba(0, 0, 0, 0.8);
 `
 const HeaderUserMenu = styled.div `
@@ -59,6 +64,7 @@ const HeaderWrapper = styled.div `
     
 `
 const HeaderUserAvatar = styled.img `
+    float: right;
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -71,12 +77,16 @@ const UserTitle = styled.div `
     padding-right: 10px;
     color: lightblue;
 `
-const LoginBt = styled.button`
-    border: 0px;
+const LoginBt = styled.div`
+    height: 30px;
+    padding: 5px,5px;
+    vertical-align: middle;
+    //border: 1px solid rgb(0,0,0.8);
     padding: 2px 15px;
     background: #FFF;
     font-weight: 600;
-        
+    position: relative;
+    margin-top: 12px;
 
 `
 
@@ -106,7 +116,11 @@ export default class App extends React.Component {
         return <AppWrapper>
             <Header>
                 <HeaderWrapper>
-                    <HeaderTitle>Camera</HeaderTitle>
+                    <HeaderTitle onClick={(e) => {
+
+                        history.push('/')
+
+                    }}>Camera</HeaderTitle>
 
                     <UserTitle>{_.get(currentUser,'name','')}</UserTitle>
 

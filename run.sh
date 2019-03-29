@@ -4,9 +4,9 @@ url3=""
 echo $url2
 cd /home/vanloi/Downloads/ngrok-stable-linux-amd64/
 gnome-terminal -e "bash -c \"ngrok http 3000; exec bash\"" &
-sleep 2
+sleep 5
 gnome-terminal -e "bash -c \"ngrok http 3001; exec bash\"" &
-sleep 3
+sleep 5
 gnome-terminal -e "bash -c \"ngrok http 3002; exec bash\""
 sleep 5
 
@@ -32,7 +32,7 @@ sed -i '49d' /home/linuxbrew/.linuxbrew/etc/nginx/nginx.conf
 sed "49i server_name server.com $ip;" /home/linuxbrew/.linuxbrew/etc/nginx/nginx.conf > /home/vanloi/Documents/nginx.conf
 cp -rf /home/vanloi/Documents/nginx.conf /home/linuxbrew/.linuxbrew/etc/nginx/
 
-if [ -e /home/linuxbrew/.linuxbrew/var/run/nginx.pid ]; then echo "nginx is running"; else nginx; fi
+if [ -e /home/linuxbrew/.linuxbrew/var/run/nginx.pid ]; then echo nginx -s reload; else nginx; fi
 
 sleep 5
 gnome-terminal -e "bash -c \"echo vanloi11c|sudo -S mongod; exec bash\""&

@@ -9,7 +9,7 @@ import {
     FormAction,
     FormInput,
     FormLabel,
-    FormSubmit
+    FormSubmit, FormButton
 } from '../../themes/form'
 
 import _ from 'lodash'
@@ -119,7 +119,13 @@ export default class Login extends Component {
                     </FormItem>
                     <FormAction>
                         <FormSubmit type={"submit"}>Login</FormSubmit>
+                        <FormButton onClick={(e) => {
+
+                            history.push('/register')
+
+                        }} type={'button'}>Register</FormButton>
                     </FormAction>
+
                 </Form>
             </LoginWrapper>
         )
