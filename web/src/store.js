@@ -147,6 +147,22 @@ export default class Store {
         });
     }
 
+    liveCamera(cameraID,bool, cb = () =>{
+    }){
+        const payload = {
+            id: cameraID,
+            stream: bool
+        }
+        this.service.post(`/api/camera/${cameraID}/stream`,payload).then((response)=>{
+            return cb(null, response.data);
+
+        }).catch((err)=>{
+            console.log("turn camera live on err:", err);
+            return cb(err,null);
+        })
+
+    }
+
     login(user, cb = () => {
     }) {
 

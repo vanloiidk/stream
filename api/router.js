@@ -141,6 +141,8 @@ exports.routers = (app) => {
         console.log("Got body command", body);
 
         const payload = _.get(body, 'stream', false);
+        console.log(payload);
+        //const camera = _.get(body,'id','');
 
         // after receiving action from User owner of camera we need to send to RaspberryPi with stream not not stream.
 
@@ -241,7 +243,6 @@ exports.routers = (app) => {
         const options = {
             _id: true,
             name: true,
-            created: true,
             live: true,
             lastConnected:true,
             isConnected: true,
@@ -325,6 +326,83 @@ exports.routers = (app) => {
 
 
     });
+
+    /**
+     * @method POST
+     * @endpoint /api/postdata
+     * @description receive data from raspberry PI
+     *
+     */
+    app.post('/api/postdata',(req,res,next)=>{
+        const rasData = req.body;
+        if(!rasData){
+            return errorHandle(res, "failed trying connect",501);
+        }
+        const payload = _.get(rasData,"payload","");
+        console.log(payload);
+        const name = _.get(payload,"id","");
+        console.log(name);
+        const query = {
+            name: name
+        };
+
+        app.db.collection("camera").findOne(query,function (err, result) {
+            if(err) throw err;
+            console.log(result.name);
+
+        });
+        const newVal = {$set:{isConnected: true}};
+        app.db.collection("camera").updateOne(query, newVal,function (err, result) {
+            if (err) {
+
+                return errorHandle(res, err, 403);
+            }
+
+            return responseHandle(res, result);
+        })
+        //console.log("found camera name: ",_.get(foundCamera,"name",''));
+
+
+    })
+
+    /**
+     * @method POST
+     * @endpoint /api/postclose
+     * @description receive data from raspberry PI
+     *
+     */
+    app.post('/api/postclose',(req,res,next)=>{
+        const rasData = req.body;
+        if(!rasData){
+            return errorHandle(res, "failed trying connect",501);
+        }
+        const payload = _.get(rasData,"payload","");
+        console.log(payload);
+        const name = _.get(payload,"id","");
+        console.log(name);
+        const query = {
+            name: name
+        };
+
+        app.db.collection("camera").findOne(query,function (err, result) {
+            if(err) throw err;
+            console.log(result.name);
+
+        });
+        const newVal = {$set:{isConnected: false}};
+        app.db.collection("camera").updateOne(query, newVal,function (err, result) {
+            if (err) {
+
+                return errorHandle(res, err, 403);
+            }
+
+            return responseHandle(res, result);
+        })
+        //console.log("found camera name: ",_.get(foundCamera,"name",''));
+
+
+    })
+
 
 
 };

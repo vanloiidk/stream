@@ -53,6 +53,9 @@ export default class Player extends Component{
 
 
             const hls = new Hls();
+            hls.liveSyncDurationCount = 1;
+            hls.maxBufferSize = 30*1000*1000;
+
             hls.loadSource(streamURL);
             hls.attachMedia(video);
             hls.on(Hls.Events.MANIFEST_PARSED,function() {

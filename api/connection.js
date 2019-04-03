@@ -12,6 +12,8 @@ class Connection{
     getClients(){
         return this.clients;
     }
+
+
     addClient(id, client){
         this.clients = this.clients.set(id,client);
 
@@ -32,11 +34,11 @@ class Connection{
 
             //add this Pi to clients collections.
             const clientId = new ObjectID().toString();
-            var key ='';
+
             ws.on('message', (msg)=>{
 
                 console.log('Message received from RaspberryPi is ',msg);
-                key=msg;
+
 
             });
 

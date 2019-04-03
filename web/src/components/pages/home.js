@@ -3,6 +3,7 @@ import styled  from 'styled-components'
 import {history} from '../../history'
 //import {FormInput} from "../themes/form";
 import _ from 'lodash'
+import {FormAction, FormButton} from "../themes/form";
 
 const HomeWrapper = styled.div `
   
@@ -68,6 +69,12 @@ export default class Home extends Component{
             }}>Go to channel</WatchBt>
             <InputChannel onChange={this._onTextFieldChange} value={_.get(channel, 'channel', '')} type={'name'}
                           name={'channel'} placeholder={'Your channel'}/>
+
+            <FormButton onClick={(e) => {
+
+                history.push('/dashboard/camera')
+
+            }} type={'button'}>Go to your Devices</FormButton>
 
         </HomeWrapper>
     }

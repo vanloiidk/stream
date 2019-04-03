@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import _ from 'lodash'
 import moment from 'moment'
 import {history} from "../../../history";
+import {borderColor} from "../../theme";
 
 const UserCameraWrapper = styled.div `
     
@@ -16,11 +17,31 @@ const ActionButton = styled.button `
     color: rgba(0,0,0,0.8);
     font-size: 15px;
 `
+const CusBt = styled.button`
+        border: 1px solid rgba(0, 0, 0.06);
+        padding: 5px 15px;
+        background: #FFF;
+        font-weight: 600;
+        outline: none;
+        
+
+`
+const DashTable = styled.table`
+    text-align: left;
+    //border: 1px solid red; 
+    grid-color: red;
+    margin-left: 10px;
+    padding: 20px;
+`;
+
 
 export default class UserCamera extends Component {
 
 
+
+
     render() {
+
 
         const {store} = this.props;
 
@@ -38,7 +59,7 @@ export default class UserCamera extends Component {
 
                 history.push('/dashboard/camera/add')
             }}>Add new Camera</ActionButton>
-            <table>
+            <DashTable>
                 <thead>
                 <tr>
                     <th>Name</th>
@@ -53,9 +74,10 @@ export default class UserCamera extends Component {
                     const lastConnected = _.get(cam, 'lastConnected');
                     return (
                         <tr key={index}>
+                            {/*<td>{index}</td>*/}
                             <td>{_.get(cam, 'name')}</td>
-                            <td>{_.get(cam, 'live') ? "Live" : "Offline"}</td>
-                            <td>{_.get(cam, 'isConnected') ? "Connected" : "Disconnected"}</td>
+                            <td>{_.get(cam, 'live','') ? "Live": "Offline"}</td>
+                            <td>{_.get(cam, 'isConnected') ? "connected" : "Disconnected"}</td>
                             <td>{lastConnected ? moment(lastConnected).fromNow() : "Disconnected"}</td>
                             <td>{_.get(cam, 'public') ? "Public" : "Private"}</td>
 
@@ -63,9 +85,15 @@ export default class UserCamera extends Component {
                     )
 
                 })}
+                <CusBt onClick={function () {
+                    store.liveCamera("123", true,() =>{});
+                }}>ON</CusBt>
+                <CusBt onClick={function () {
+                    store.liveCamera("123", false,() =>{});
+                }}>OFF</CusBt>
 
                 </tbody>
-            </table>
+            </DashTable>
 
         </UserCameraWrapper>
 

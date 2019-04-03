@@ -3,6 +3,7 @@ from autobahn.twisted.websocket import WebSocketClientProtocol, WebSocketClientF
 import json
 import subprocess
 import os
+import requests
 
 streaming_process = None
 
@@ -33,7 +34,7 @@ class App:
                 print(streaming_process)
                 if streaming_process is None:
 
-                    ffmpeg_command = 'ffmpeg -re -i /dev/video0 -c:v libx264 -preset ultrafast -tune zerolatency -maxrate 3000k -bufsize 6000k -pix_fmt yuv420p -g 50 -c:a aac -b:a 160k -ac 2 -ar 44100 -f flv rtmp://localhost/live/tabvn'
+                    ffmpeg_command = 'ffmpeg -re -i /dev/video0 -c:v libx264 -preset ultrafast -tune zerolatency -maxrate 3000k -bufsize 6000k -vf scale=320:240 -pix_fmt yuv420p -g 50 -c:a aac -b:a 160k -ac 2 -ar 44100 -f flv rtmp://localhost/live/loi'
 
                     streaming_process = subprocess.Popen(ffmpeg_command, shell=True, stdin=subprocess.PIPE)
                     # start_streaming.communicate()
@@ -79,6 +80,13 @@ class AppProtocol(WebSocketClientProtocol):
             # self.factory.reactor.callLater(1, hello_server)
         hello_server()
 
+        def postData():
+            newData = {"action": "pi_online", "payload": {"id": "vanloi", "secret": "key"}}
+            post = requests.post('http://localhost:3001/api/postdata', json=newData)
+            print(post.text)
+        postData()
+
+
     def onMessage(self, payload, isBinary):
         if (isBinary):
             print("Got Binary message {0} bytes".format(len(payload)))
@@ -91,6 +99,11 @@ class AppProtocol(WebSocketClientProtocol):
     def onClose(self, wasClean, code, reason):
         print("Connect closed {0}".format(reason))
 
+        def postClose():
+            newData = {"action": "pi_offline", "payload": {"id": "vanloi", "secret": "key"}}
+            post = requests.post('http://localhost:3001/api/postclose', json=newData)
+            print(post.text)
+        postClose()
 
 class AppFactory(WebSocketClientFactory, ReconnectingClientFactory):
     protocol = AppProtocol

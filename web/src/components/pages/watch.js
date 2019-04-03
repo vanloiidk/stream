@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import styled  from 'styled-components'
 import Player from "../player";
-//import {history} from "../../history";
+import {history} from "../../history";
 
 const LiveWrapper = styled.div `
     
